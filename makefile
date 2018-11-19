@@ -6,7 +6,7 @@
 #    By: ccepre <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:43:12 by ccepre            #+#    #+#              #
-#    Updated: 2018/11/16 17:14:23 by ccepre           ###   ########.fr        #
+#    Updated: 2018/11/19 11:46:08 by ccepre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,6 +102,6 @@ clean :
 	rm -f $(OBJS)
 
 fclean : clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re : fclean all

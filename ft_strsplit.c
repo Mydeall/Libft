@@ -6,11 +6,18 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 10:37:22 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/16 12:30:39 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/17 12:32:57 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void		free_tab(char **tab, int count)
+{
+	while (--count >= 0)
+		free(tab[count]);
+	free(tab);
+}
 
 static char		**filltab(char **tab, char *str, int count, char c)
 {
@@ -26,7 +33,10 @@ static char		**filltab(char **tab, char *str, int count, char c)
 		while (str[i] != c)
 			i++;
 		if (!(tab[j] = ft_strsub(str, 0, i)))
+		{
+			free_tab(tab, count);
 			return (NULL);
+		}
 		while (*str && str[i] == c)
 			i++;
 		str = &str[i];
@@ -53,7 +63,7 @@ char			**ft_strsplit(char const *s, char c)
 			str++;
 		count++;
 	}
-	if (!(tab = (char**)malloc(sizeof(char*) * (count + 1))))
+	if (!(tab = (char**)ft_memalloc(sizeof(char*) * (count + 1))))
 		return (NULL);
 	tab[count] = 0;
 	tab = filltab(tab, (char*)s, count, c);

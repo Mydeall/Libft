@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 13:05:48 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/16 17:38:07 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/19 10:18:29 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char		*ft_itoa_base(int nb, const char *base)
 	int		len_b;
 	char	*str;
 
-	if (verif_base(base))
+	if (!(base) || verif_base(base))
 		return (NULL);
 	if (nb == 0)
 		return ("0");
