@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 20:00:42 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/16 14:31:00 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/30 13:11:48 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct		s_list
 size_t				ft_strlen(const char *str);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-int					ft_atoi(const char *str);
+long long int		ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -52,7 +52,7 @@ size_t				ft_strlcat(char *dest, const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strdup(const char *s1);
-void				ft_putchar(char c);
+void				ft_putchar(wchar_t c);
 void				ft_putstr(char const *s);
 void				*ft_memalloc(size_t size);
 char				*ft_strnew(size_t size);
@@ -90,6 +90,6 @@ size_t				ft_lstlen(t_list *lst);
 void				ft_lstradd(t_list **lst, t_list *new);
 void				ft_putlst_str(t_list *lst);
 int					ft_pow(int nb, int pow);
-char				*ft_itoa_base(int nb, const char *base);
+char				*ft_itoa_base(long long int nb, const char *base);
 
 #endif

@@ -6,15 +6,15 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/03 14:40:10 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/13 12:10:07 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/30 12:03:16 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
+long long int		ft_atoi(const char *str)
 {
-	long int	i;
-	long int	result;
-	int			sign;
+	long long int	i;
+	long long int	result;
+	int				sign;
 
 	sign = 1;
 	i = 0;
@@ -29,9 +29,6 @@ int		ft_atoi(const char *str)
 		++i;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - 48);
-		i++;
-	}
+		result = result * 10 + (str[i++] - 48);
 	return (result * sign);
 }

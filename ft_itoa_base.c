@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 13:05:48 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/19 10:18:29 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/11/30 11:24:10 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	verif_base(const char *base)
 	return (0);
 }
 
-static int	size_result(int nb, int len_b)
+static int	size_result(long long int nb, int len_b)
 {
 	int len;
 
@@ -47,7 +47,7 @@ static int	size_result(int nb, int len_b)
 	return (len);
 }
 
-char		*ft_itoa_base(int nb, const char *base)
+char		*ft_itoa_base(long long int nb, const char *base)
 {
 	size_t	len;
 	int		len_b;

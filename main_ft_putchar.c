@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   main_ft_putchar.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 10:02:33 by ccepre            #+#    #+#             */
-/*   Updated: 2018/12/03 17:54:10 by ccepre           ###   ########.fr       */
+/*   Created: 2018/11/30 13:09:39 by ccepre            #+#    #+#             */
+/*   Updated: 2018/11/30 13:40:53 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int main(int ac, char **av)
 {
-	char	*str;
-	size_t	i;
+	int c = L'Ã¸';
 
-	if (!(s) || !(str = ft_strnew(len + 1)))
-		return (NULL);
-	i = 0;
-	while ((--len + 1) > 0)
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	return (str);
+	printf("%d\n", c);
+	printf("%c\n", c);
+	printf("----------------------\n");
+	ft_putchar(c);
+	printf("\n%lld\n",c) ;
+	return (0);
 }

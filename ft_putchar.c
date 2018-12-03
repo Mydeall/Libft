@@ -6,13 +6,31 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 16:52:49 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/13 12:25:58 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/12/03 17:37:05 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(wchar_t c)
 {
-	write(1, &c, 1);
+	unsigned char s[3];
+	if (c > 127)
+	{
+		s[0] = 194;
+		if (c - 127 > 61)
+		{
+			s[0] += 1;
+			s[1] = 127 + c - 191;
+		}
+		else
+			s[1] = c;
+		s[2] = 0;
+	}
+	else
+	{
+		s[0] = c;
+		s[1] = 0;
+	}
+	write(1, s, 2);
 }

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_base_main.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 10:02:33 by ccepre            #+#    #+#             */
-/*   Updated: 2018/12/03 17:54:10 by ccepre           ###   ########.fr       */
+/*   Created: 2018/11/16 14:06:04 by ccepre            #+#    #+#             */
+/*   Updated: 2018/11/30 12:13:52 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int main(int ac, char **av)
 {
-	char	*str;
-	size_t	i;
+	char *base;
 
-	if (!(s) || !(str = ft_strnew(len + 1)))
-		return (NULL);
-	i = 0;
-	while ((--len + 1) > 0)
+	if (ac != 3)
 	{
-		str[i] = s[start + i];
-		i++;
+		printf("wrong number of arg : [long long int nb] [char *base]");
+		return (1);
 	}
-	return (str);
+	printf("%lld\n", ft_atoi(av[1])); 
+	printf("%s", ft_itoa_base(ft_atoi(av[1]), av[2]));
+	return (0);
 }

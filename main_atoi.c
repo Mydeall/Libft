@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   main_atoi.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 10:02:33 by ccepre            #+#    #+#             */
-/*   Updated: 2018/12/03 17:54:10 by ccepre           ###   ########.fr       */
+/*   Created: 2018/11/30 11:29:26 by ccepre            #+#    #+#             */
+/*   Updated: 2018/11/30 13:31:33 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int main(int ac, char **av)
 {
-	char	*str;
-	size_t	i;
-
-	if (!(s) || !(str = ft_strnew(len + 1)))
-		return (NULL);
-	i = 0;
-	while ((--len + 1) > 0)
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	return (str);
+	if (ac != 2)
+		printf("need 1 arg");
+	printf("main : %lld\n", ft_atoi(av[1]));
+	printf("real : %lld", atoi(av[1]));
+	return (0);
 }
