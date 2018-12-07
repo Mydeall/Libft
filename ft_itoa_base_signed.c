@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 13:05:48 by ccepre            #+#    #+#             */
-/*   Updated: 2018/12/05 15:47:01 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/12/05 15:49:43 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,21 @@ static int	verif_base(const char *base)
 	return (0);
 }
 
-static int	size_result(unsigned long long int nb, int len_b)
+static int	size_result(long long int nb, int len_b)
 {
 	int len;
 
 	len = 0;
+	nb = nb < 0 ? nb : -nb;
 	while (nb != 0)
 	{
-		nb = nb / len_b;
+		nb = -(nb / -len_b);
 		len++;
 	}
 	return (len);
 }
 
-char		*ft_itoa_base(unsigned long long int nb, const char *base)
+char		*ft_itoa_base_signed(long long int nb, const char *base)
 {
 	size_t	len;
 	int		len_b;
@@ -58,12 +59,16 @@ char		*ft_itoa_base(unsigned long long int nb, const char *base)
 		return ("0");
 	len_b = ft_strlen(base);
 	len = size_result(nb, len_b);
+	if (nb < 0)
+		len++;
+	nb = nb < 0 ? nb : -nb;
 	if (!(str = ft_strnew(len + 1)))
 		return (NULL);
+	str[0] = '-';
 	while (nb != 0)
 	{
-		str[--len] = base[nb % len_b];
-		nb = nb / len_b;
+		str[--len] = base[-(nb % len_b)];
+		nb = -(nb / -len_b);
 	}
 	return (str);
 }

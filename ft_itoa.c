@@ -6,17 +6,17 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:00:02 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/12 14:29:52 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/12/05 17:15:11 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long long int n)
 {
-	int		len;
-	int		cpy;
-	char	*s;
+	int				len;
+	long long int	cpy;
+	char			*s;
 
 	cpy = n;
 	len = (cpy == 0 ? 1 : 0);

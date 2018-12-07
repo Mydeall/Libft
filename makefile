@@ -6,7 +6,7 @@
 #    By: ccepre <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 15:43:12 by ccepre            #+#    #+#              #
-#    Updated: 2018/11/19 11:46:08 by ccepre           ###   ########.fr        #
+#    Updated: 2018/12/07 11:15:45 by ccepre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,10 @@ SRCS = ft_itoa.c\
 	   ft_lstradd.c\
 	   ft_putlst_str.c\
 	   ft_pow.c\
-	   ft_itoa_base.c
+	   ft_itoa_base.c\
+	   ft_itoa_base_signed.c\
+	   ft_dputnbr.c \
+	   ft_dtoa.c \
 
 HEADERS = .
 

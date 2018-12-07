@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 20:00:42 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/30 13:11:48 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/12/06 14:13:09 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const*s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
-char				*ft_itoa(int n);
+char				*ft_itoa(long long int n);
 void				ft_putnbr(int n);
 void				ft_putendl(char const *s);
 void				ft_putchar_fd(char c, int fd);
@@ -90,6 +90,9 @@ size_t				ft_lstlen(t_list *lst);
 void				ft_lstradd(t_list **lst, t_list *new);
 void				ft_putlst_str(t_list *lst);
 int					ft_pow(int nb, int pow);
-char				*ft_itoa_base(long long int nb, const char *base);
+char				*ft_itoa_base(unsigned long long int nb, const char *base);
+char				*ft_itoa_base_signed(long long int nb, const char *base);
+void				ft_dputnbr(long double n, int precision);
+char			    *ft_dtoa(long double n, int precision);
 
 #endif
