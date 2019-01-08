@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 13:05:48 by ccepre            #+#    #+#             */
-/*   Updated: 2018/12/05 15:47:01 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/12/07 14:44:40 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ char		*ft_itoa_base(unsigned long long int nb, const char *base)
 
 	if (!(base) || verif_base(base))
 		return (NULL);
-	if (nb == 0)
-		return ("0");
 	len_b = ft_strlen(base);
 	len = size_result(nb, len_b);
+	if (nb == 0)
+		return (ft_strdup("0"));
 	if (!(str = ft_strnew(len + 1)))
 		return (NULL);
 	while (nb != 0)

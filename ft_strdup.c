@@ -6,7 +6,7 @@
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 14:14:42 by ccepre            #+#    #+#             */
-/*   Updated: 2018/11/13 12:34:42 by ccepre           ###   ########.fr       */
+/*   Updated: 2018/12/07 14:47:59 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s1)
 	char	*dup;
 
 	i = 0;
+	if (!s1)
+		return (NULL);
 	while (s1[i] != '\0')
 		i++;
 	if (!(dup = (char*)malloc(sizeof(char) * i + 1)))
