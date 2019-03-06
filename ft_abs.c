@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlst_str.c                                    :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 19:12:09 by ccepre            #+#    #+#             */
-/*   Updated: 2019/02/25 11:32:31 by ccepre           ###   ########.fr       */
+/*   Created: 2019/01/21 15:30:18 by ccepre            #+#    #+#             */
+/*   Updated: 2019/02/15 12:21:46 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putlst_str(t_list *lst)
+int	ft_abs(int x)
 {
-	t_list *current;
-
-	ft_putstr("{\n");
-	if (!(lst))
-		ft_putstr("(null)\n");
-	current = lst;
-	while (current)
-	{
-		ft_putchar('|');
-		ft_putstr(current->content);
-		ft_putchar('|');
-		ft_putchar('\n');
-		current = current->next;
-	}
-	ft_putstr("}\n");
+	return (x >= 0 ? x : -x);
 }

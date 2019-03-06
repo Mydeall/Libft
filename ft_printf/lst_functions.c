@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlst_str.c                                    :+:      :+:    :+:   */
+/*   lst_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 19:12:09 by ccepre            #+#    #+#             */
-/*   Updated: 2019/02/25 11:32:31 by ccepre           ###   ########.fr       */
+/*   Created: 2018/12/13 14:04:39 by ccepre            #+#    #+#             */
+/*   Updated: 2018/12/21 12:14:49 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putlst_str(t_list *lst)
+void	node_reset(t_stack *lst)
 {
-	t_list *current;
+	lst->attributs = NULL;
+	lst->modifier = NULL;
+	lst->width = 0;
+	lst->precision = -1;
+	lst->format = 0;
+}
 
-	ft_putstr("{\n");
-	if (!(lst))
-		ft_putstr("(null)\n");
-	current = lst;
-	while (current)
-	{
-		ft_putchar('|');
-		ft_putstr(current->content);
-		ft_putchar('|');
-		ft_putchar('\n');
-		current = current->next;
-	}
-	ft_putstr("}\n");
+void	free_node(t_stack *lst)
+{
+	if (lst->attributs)
+		ft_strdel(&lst->attributs);
+	if (lst->modifier)
+		ft_strdel(&lst->modifier);
 }

@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlst_str.c                                    :+:      :+:    :+:   */
+/*   ft_freetab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 19:12:09 by ccepre            #+#    #+#             */
-/*   Updated: 2019/02/25 11:32:31 by ccepre           ###   ########.fr       */
+/*   Created: 2019/02/08 13:17:06 by ccepre            #+#    #+#             */
+/*   Updated: 2019/02/11 17:21:45 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putlst_str(t_list *lst)
+void		ft_freetab(char **av)
 {
-	t_list *current;
+	int i;
 
-	ft_putstr("{\n");
-	if (!(lst))
-		ft_putstr("(null)\n");
-	current = lst;
-	while (current)
+	if (av)
 	{
-		ft_putchar('|');
-		ft_putstr(current->content);
-		ft_putchar('|');
-		ft_putchar('\n');
-		current = current->next;
+		i = -1;
+		while (av[++i])
+			if (av[i])
+				free(av[i]);
+		free(av);
 	}
-	ft_putstr("}\n");
 }

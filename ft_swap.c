@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlst_str.c                                    :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccepre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 19:12:09 by ccepre            #+#    #+#             */
-/*   Updated: 2019/02/25 11:32:31 by ccepre           ###   ########.fr       */
+/*   Created: 2018/08/02 22:03:33 by ccepre            #+#    #+#             */
+/*   Updated: 2018/08/04 13:00:51 by ccepre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putlst_str(t_list *lst)
+void	ft_swap(int *a, int *b)
 {
-	t_list *current;
+	int tmp;
 
-	ft_putstr("{\n");
-	if (!(lst))
-		ft_putstr("(null)\n");
-	current = lst;
-	while (current)
-	{
-		ft_putchar('|');
-		ft_putstr(current->content);
-		ft_putchar('|');
-		ft_putchar('\n');
-		current = current->next;
-	}
-	ft_putstr("}\n");
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
